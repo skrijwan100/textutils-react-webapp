@@ -30,7 +30,7 @@ function App() {
   const togglemode = () => {
     if (mode === "light") {
       setmode('dark')
-      setword('off dark mode')
+      setword('Enabal light mode')
       showAlert("Successfully enable dark mode", "success")
       setextarea({
         background: "#202121",
@@ -60,7 +60,7 @@ function App() {
         <Navbar about="About" mode={mode} togglemode={togglemode} word={word} />
         <Alert alert={alert} />
         <Routes> {/* Replace Switch with Routes */}
-          <Route path="/about" element={<About />} /> {/* Use element prop */}
+          <Route path="/about" element={<About mode={mode}/>} /> {/* Use element prop */}
           <Route path="/" element={
             <div className="container-lg">
               <Texenter heading="Enter your text" showAlert={showAlert} textarea={textarea} />

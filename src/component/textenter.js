@@ -52,17 +52,17 @@ export default function Textenter(props) {
                     <textarea className="form-control" onChange={onchange} id="exampleFormControlTextarea1" value={text} rows="7" style={props.textarea}></textarea>
                 </div>
                 <div className="containar">
-                    <button className="btn btn-primary mx-5" onClick={uppercaseconvaet}>Convert Uppercase</button>
-                    <button className="btn btn-primary mx-5" onClick={lowercaseconvaet}>Convert Lowercase</button>
-                    <button className="btn btn-primary mx-5" onClick={copy}>Copy</button>
-                    <button className="btn btn-primary mx-5" onClick={beautiful}>Convert beautiful text</button>
-                    <button className="btn btn-primary mx-5" onClick={saveAsTextFile}>Save as a text file</button>
-                    <button className="btn btn-primary mx-5" onClick={clear}>Clear</button>
+                    <button  disabled={text.length===0} className="btn btn-primary mx-5" onClick={uppercaseconvaet}>Convert Uppercase</button>
+                    <button  disabled={text.length===0} className="btn btn-primary mx-5" onClick={lowercaseconvaet}>Convert Lowercase</button>
+                    <button  disabled={text.length===0} className="btn btn-primary mx-5" onClick={copy}>Copy</button>
+                    <button  disabled={text.length===0} className="btn btn-primary mx-5" onClick={beautiful}>Convert beautiful text</button>
+                    <button  disabled={text.length===0} className="btn btn-primary mx-5" onClick={saveAsTextFile}>Save as a text file</button>
+                    <button  disabled={text.length===0} className="btn btn-primary mx-5" onClick={clear}>Clear</button>
                 </div>
             </div >
             <div className="newfuter my-3">
                 <h2>Your summary</h2>
-                <p>{(text.split(" ").length) - 1} Word and charectar {text.length}</p>
+                <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Word and charectar {text.length}</p>
 
             </div>
             <div className="preview">

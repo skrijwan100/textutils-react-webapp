@@ -1,78 +1,57 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-export default function About() {
-    const [mystyle,setmystyle] = useState(
-        {
-            color: "black",
-            backgroundColor: 'white'
+export default function About(props) {
+  let mystyle={
+    backgroundColor:props.mode==='dark'?"#1b1a1a":"white",
+    color: props.mode==='light'?"black":"white"
+  }
 
-        }
-    )
-    const [btn,setbtn]=useState("Enabale dark mode")
-    let togglemode = () => {
-        if (mystyle.color === 'black') {
-            setmystyle({
-                color: "red",
-                backgroundColor: 'black',
-                border:"0.3px solid red"
-
-            })
-            setbtn("Enabale light mode")
-            
-        }
-        else{
-            setmystyle({
-                color: "black",
-                backgroundColor: 'white'
-                
-            })
-            setbtn("Enabale dark mode")
-        }
-
-    }
+   
     return (
         <div className='Containar my-3 mx-4 ' style={mystyle}>
             <div className="accordion" id="accordionExample" style={mystyle}>
                 <div className="accordion-item" style={mystyle}>
                     <h2 className="accordion-header">
                         <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style={mystyle}>
-                            Accordion Item #1
+                         <strong>About txtesutil</strong>
                         </button>
                     </h2>
                     <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                         <div className="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        Welcome to txtesutils, your go-to tool for quick and efficient text processing! Whether you need to transform, clean, or analyze your text, txtesutils is here to make your life easier. With a suite of powerful utilities, you can perform various text operations seamlessly, all within one intuitive app.
                         </div>
                     </div>
                 </div>
                 <div className="accordion-item" style={mystyle}>
                     <h2 className="accordion-header" >
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style={mystyle}>
-                            Accordion Item #2
+                           <strong>Our Mission</strong>
                         </button>
                     </h2>
                     <div id="collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div className="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        At txtesutils, we aim to empower users by simplifying text manipulation tasks. We believe that everyone should have access to tools that enhance productivity and streamline workflows. Our app is designed with you in mind, providing a user-friendly experience without compromising on functionality.
                         </div>
                     </div>
                 </div>
                 <div className="accordion-item" style={mystyle}>
                     <h2 className="accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style={mystyle}>
-                            Accordion Item #3
+                            <strong>Features</strong>
                         </button>
                     </h2>
                     <div id="collapseThree" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div className="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <ul>
+                                <li><strong>Text Transformation:</strong> Convert case,copy text,convert beautiful text, and more.</li>
+                                <li><strong>Text Analysis:</strong> Get word counts, character counts, and other insights instantly.</li>
+                                <li><strong>Easy to Use: </strong>A clean and straightforward interface that allows you to focus on what matters.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="mode my-4">
-                <button onClick={togglemode} type="button"  className="btn btn-primary">{btn}</button>
-            </div>
+          
 
         </div>
     )
