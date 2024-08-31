@@ -62,7 +62,7 @@ export default function Textenter(props) {
             </div >
             <div className="newfuter my-3">
                 <h2>Your summary</h2>
-                <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Word and charectar {text.length}</p>
+                <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Word and charectar {text.length}</p>
 
             </div>
             <div className="preview">
